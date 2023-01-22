@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+ 
+</head>
+<body>
+
+    <div class="center">
+
+    <h1>Calculator Using Django</h1>
+    <h4>In this calculator you can calculate simple calculation like addition, subtraction, multiplication and division</h4>
+
+    <div class="container">
+      <form action="" method="post">
+        {% csrf_token %}
+        {% for fm in form %}
+            <span>
+                {{ fm.label_tag }}
+                
+            </span>
+            {{fm}}
+            {{fm.errors|striptags}}
+        {% endfor %}
+        </div>
+        <button class="button-30" role="button">Enter</button>
+    </form><br><br><br>
+    <hr>
+    
+    <div class="result">
+        <h1>Answer : 
+            <span class="answer">{{result}}</span>
+        </h1>
+        <button class="button-30" role="button"><a href="{% url 'home' %}">Calculate Again</a> </button>
+    </div>
+
+    </div>
+
+
+</body>
+</html>
