@@ -1,1 +1,0 @@
-print("To use this file as a django file we have to set environment for this file")
